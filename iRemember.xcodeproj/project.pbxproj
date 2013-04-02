@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF91AC38170B26E40022B25C /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF91AC37170B26E40022B25C /* nav_menu_icon@2x.png */; };
+		CFD102CA170B220C009EAC47 /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD102C9170B220C009EAC47 /* DDMenuController.m */; };
+		CFD102CC170B22C1009EAC47 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD102CB170B22C1009EAC47 /* QuartzCore.framework */; };
+		CFD102D6170B2367009EAC47 /* FeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD102CF170B2367009EAC47 /* FeedController.m */; };
+		CFD102D7170B2367009EAC47 /* LeftController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD102D2170B2367009EAC47 /* LeftController.m */; };
+		CFD102D8170B2367009EAC47 /* RightController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD102D5170B2367009EAC47 /* RightController.m */; };
 		CFF0986C170AE8F800738EF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF0986B170AE8F800738EF2 /* UIKit.framework */; };
 		CFF0986E170AE8F800738EF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF0986D170AE8F800738EF2 /* Foundation.framework */; };
 		CFF09870170AE8F800738EF2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF0986F170AE8F800738EF2 /* CoreGraphics.framework */; };
@@ -21,6 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF91AC37170B26E40022B25C /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_menu_icon@2x.png"; sourceTree = "<group>"; };
+		CFD102C8170B220C009EAC47 /* DDMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMenuController.h; sourceTree = "<group>"; };
+		CFD102C9170B220C009EAC47 /* DDMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMenuController.m; sourceTree = "<group>"; };
+		CFD102CB170B22C1009EAC47 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CFD102CE170B2367009EAC47 /* FeedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedController.h; sourceTree = "<group>"; };
+		CFD102CF170B2367009EAC47 /* FeedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedController.m; sourceTree = "<group>"; };
+		CFD102D1170B2367009EAC47 /* LeftController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftController.h; sourceTree = "<group>"; };
+		CFD102D2170B2367009EAC47 /* LeftController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftController.m; sourceTree = "<group>"; };
+		CFD102D4170B2367009EAC47 /* RightController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightController.h; sourceTree = "<group>"; };
+		CFD102D5170B2367009EAC47 /* RightController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightController.m; sourceTree = "<group>"; };
 		CFF09868170AE8F800738EF2 /* iRemember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRemember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFF0986B170AE8F800738EF2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CFF0986D170AE8F800738EF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -44,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD102CC170B22C1009EAC47 /* QuartzCore.framework in Frameworks */,
 				CFF0986C170AE8F800738EF2 /* UIKit.framework in Frameworks */,
 				CFF0986E170AE8F800738EF2 /* Foundation.framework in Frameworks */,
 				CFF09870170AE8F800738EF2 /* CoreGraphics.framework in Frameworks */,
@@ -53,10 +70,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF91AC36170B26E40022B25C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CF91AC37170B26E40022B25C /* nav_menu_icon@2x.png */,
+			);
+			name = Resources;
+			path = iRemember/Resources;
+			sourceTree = "<group>";
+		};
+		CFD102CD170B2367009EAC47 /* FeedController */ = {
+			isa = PBXGroup;
+			children = (
+				CFD102CE170B2367009EAC47 /* FeedController.h */,
+				CFD102CF170B2367009EAC47 /* FeedController.m */,
+			);
+			name = FeedController;
+			path = "../../../Downloads/devindoty-DDMenuController-4b992d1/DDMenuController/Classes/Controllers/FeedController";
+			sourceTree = "<group>";
+		};
+		CFD102D0170B2367009EAC47 /* LeftController */ = {
+			isa = PBXGroup;
+			children = (
+				CFD102D1170B2367009EAC47 /* LeftController.h */,
+				CFD102D2170B2367009EAC47 /* LeftController.m */,
+			);
+			name = LeftController;
+			path = "../../../Downloads/devindoty-DDMenuController-4b992d1/DDMenuController/Classes/Controllers/LeftController";
+			sourceTree = "<group>";
+		};
+		CFD102D3170B2367009EAC47 /* RightController */ = {
+			isa = PBXGroup;
+			children = (
+				CFD102D4170B2367009EAC47 /* RightController.h */,
+				CFD102D5170B2367009EAC47 /* RightController.m */,
+			);
+			name = RightController;
+			path = "../../../Downloads/devindoty-DDMenuController-4b992d1/DDMenuController/Classes/Controllers/RightController";
+			sourceTree = "<group>";
+		};
 		CFF0985F170AE8F700738EF2 = {
 			isa = PBXGroup;
 			children = (
 				CFF09871170AE8F800738EF2 /* iRemember */,
+				CF91AC36170B26E40022B25C /* Resources */,
 				CFF0986A170AE8F800738EF2 /* Frameworks */,
 				CFF09869170AE8F800738EF2 /* Products */,
 			);
@@ -73,6 +130,7 @@
 		CFF0986A170AE8F800738EF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CFD102CB170B22C1009EAC47 /* QuartzCore.framework */,
 				CFF0986B170AE8F800738EF2 /* UIKit.framework */,
 				CFF0986D170AE8F800738EF2 /* Foundation.framework */,
 				CFF0986F170AE8F800738EF2 /* CoreGraphics.framework */,
@@ -88,6 +146,9 @@
 				CFF09883170AE8F800738EF2 /* ViewController.h */,
 				CFF09884170AE8F800738EF2 /* ViewController.m */,
 				CFF09886170AE8F800738EF2 /* ViewController.xib */,
+				CFF09890170B206700738EF2 /* Models */,
+				CFF0988F170B205A00738EF2 /* Views */,
+				CFF0988E170B204900738EF2 /* ViewControllers */,
 				CFF09872170AE8F800738EF2 /* Supporting Files */,
 			);
 			path = iRemember;
@@ -105,6 +166,32 @@
 				CFF09881170AE8F800738EF2 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CFF0988E170B204900738EF2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFD102C8170B220C009EAC47 /* DDMenuController.h */,
+				CFD102C9170B220C009EAC47 /* DDMenuController.m */,
+				CFD102CD170B2367009EAC47 /* FeedController */,
+				CFD102D0170B2367009EAC47 /* LeftController */,
+				CFD102D3170B2367009EAC47 /* RightController */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CFF0988F170B205A00738EF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CFF09890170B206700738EF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +250,7 @@
 				CFF09880170AE8F800738EF2 /* Default@2x.png in Resources */,
 				CFF09882170AE8F800738EF2 /* Default-568h@2x.png in Resources */,
 				CFF09888170AE8F800738EF2 /* ViewController.xib in Resources */,
+				CF91AC38170B26E40022B25C /* nav_menu_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +264,10 @@
 				CFF09878170AE8F800738EF2 /* main.m in Sources */,
 				CFF0987C170AE8F800738EF2 /* AppDelegate.m in Sources */,
 				CFF09885170AE8F800738EF2 /* ViewController.m in Sources */,
+				CFD102CA170B220C009EAC47 /* DDMenuController.m in Sources */,
+				CFD102D6170B2367009EAC47 /* FeedController.m in Sources */,
+				CFD102D7170B2367009EAC47 /* LeftController.m in Sources */,
+				CFD102D8170B2367009EAC47 /* RightController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +390,7 @@
 				CFF0988D170AE8F800738EF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

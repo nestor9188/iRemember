@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "LeftController.h"
+#import "RightController.h"
+#import "FeedController.h"
+#import "DDMenuController.h"
 
 @implementation AppDelegate
 
@@ -16,8 +20,18 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    FeedController *mainController = [[FeedController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mainController];
+    
+    DDMenuController *rootController = [[DDMenuController alloc] initWithRootViewController:navController];
+    _menuController = rootController;
+    
+    LeftController *leftController = [[LeftController alloc] init];
+    rootController.leftViewController = leftController;
+    
+    RightController *rightController = [[RightController alloc] init];
+    rootController.rightViewController = rightController;
+    self.window.rootViewController = rootController;
     [self.window makeKeyAndVisible];
     return YES;
 }
