@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CFF0986C170AE8F800738EF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF0986B170AE8F800738EF2 /* UIKit.framework */; };
+		CFF0986E170AE8F800738EF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF0986D170AE8F800738EF2 /* Foundation.framework */; };
+		CFF09870170AE8F800738EF2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF0986F170AE8F800738EF2 /* CoreGraphics.framework */; };
+		CFF09876170AE8F800738EF2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFF09874170AE8F800738EF2 /* InfoPlist.strings */; };
+		CFF09878170AE8F800738EF2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF09877170AE8F800738EF2 /* main.m */; };
+		CFF0987C170AE8F800738EF2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF0987B170AE8F800738EF2 /* AppDelegate.m */; };
+		CFF0987E170AE8F800738EF2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF0987D170AE8F800738EF2 /* Default.png */; };
+		CFF09880170AE8F800738EF2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF0987F170AE8F800738EF2 /* Default@2x.png */; };
+		CFF09882170AE8F800738EF2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFF09881170AE8F800738EF2 /* Default-568h@2x.png */; };
+		CFF09885170AE8F800738EF2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF09884170AE8F800738EF2 /* ViewController.m */; };
+		CFF09888170AE8F800738EF2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFF09886170AE8F800738EF2 /* ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CFF09868170AE8F800738EF2 /* iRemember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRemember.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFF0986B170AE8F800738EF2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CFF0986D170AE8F800738EF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CFF0986F170AE8F800738EF2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CFF09873170AE8F800738EF2 /* iRemember-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iRemember-Info.plist"; sourceTree = "<group>"; };
+		CFF09875170AE8F800738EF2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CFF09877170AE8F800738EF2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CFF09879170AE8F800738EF2 /* iRemember-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iRemember-Prefix.pch"; sourceTree = "<group>"; };
+		CFF0987A170AE8F800738EF2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CFF0987B170AE8F800738EF2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CFF0987D170AE8F800738EF2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CFF0987F170AE8F800738EF2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CFF09881170AE8F800738EF2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CFF09883170AE8F800738EF2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CFF09884170AE8F800738EF2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CFF09887170AE8F800738EF2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFF09865170AE8F800738EF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFF0986C170AE8F800738EF2 /* UIKit.framework in Frameworks */,
+				CFF0986E170AE8F800738EF2 /* Foundation.framework in Frameworks */,
+				CFF09870170AE8F800738EF2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFF0985F170AE8F700738EF2 = {
+			isa = PBXGroup;
+			children = (
+				CFF09871170AE8F800738EF2 /* iRemember */,
+				CFF0986A170AE8F800738EF2 /* Frameworks */,
+				CFF09869170AE8F800738EF2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFF09869170AE8F800738EF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFF09868170AE8F800738EF2 /* iRemember.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFF0986A170AE8F800738EF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFF0986B170AE8F800738EF2 /* UIKit.framework */,
+				CFF0986D170AE8F800738EF2 /* Foundation.framework */,
+				CFF0986F170AE8F800738EF2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFF09871170AE8F800738EF2 /* iRemember */ = {
+			isa = PBXGroup;
+			children = (
+				CFF0987A170AE8F800738EF2 /* AppDelegate.h */,
+				CFF0987B170AE8F800738EF2 /* AppDelegate.m */,
+				CFF09883170AE8F800738EF2 /* ViewController.h */,
+				CFF09884170AE8F800738EF2 /* ViewController.m */,
+				CFF09886170AE8F800738EF2 /* ViewController.xib */,
+				CFF09872170AE8F800738EF2 /* Supporting Files */,
+			);
+			path = iRemember;
+			sourceTree = "<group>";
+		};
+		CFF09872170AE8F800738EF2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CFF09873170AE8F800738EF2 /* iRemember-Info.plist */,
+				CFF09874170AE8F800738EF2 /* InfoPlist.strings */,
+				CFF09877170AE8F800738EF2 /* main.m */,
+				CFF09879170AE8F800738EF2 /* iRemember-Prefix.pch */,
+				CFF0987D170AE8F800738EF2 /* Default.png */,
+				CFF0987F170AE8F800738EF2 /* Default@2x.png */,
+				CFF09881170AE8F800738EF2 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFF09867170AE8F800738EF2 /* iRemember */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFF0988B170AE8F800738EF2 /* Build configuration list for PBXNativeTarget "iRemember" */;
+			buildPhases = (
+				CFF09864170AE8F800738EF2 /* Sources */,
+				CFF09865170AE8F800738EF2 /* Frameworks */,
+				CFF09866170AE8F800738EF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iRemember;
+			productName = iRemember;
+			productReference = CFF09868170AE8F800738EF2 /* iRemember.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFF09860170AE8F700738EF2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = nestree;
+			};
+			buildConfigurationList = CFF09863170AE8F700738EF2 /* Build configuration list for PBXProject "iRemember" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CFF0985F170AE8F700738EF2;
+			productRefGroup = CFF09869170AE8F800738EF2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFF09867170AE8F800738EF2 /* iRemember */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFF09866170AE8F800738EF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFF09876170AE8F800738EF2 /* InfoPlist.strings in Resources */,
+				CFF0987E170AE8F800738EF2 /* Default.png in Resources */,
+				CFF09880170AE8F800738EF2 /* Default@2x.png in Resources */,
+				CFF09882170AE8F800738EF2 /* Default-568h@2x.png in Resources */,
+				CFF09888170AE8F800738EF2 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFF09864170AE8F800738EF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFF09878170AE8F800738EF2 /* main.m in Sources */,
+				CFF0987C170AE8F800738EF2 /* AppDelegate.m in Sources */,
+				CFF09885170AE8F800738EF2 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CFF09874170AE8F800738EF2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFF09875170AE8F800738EF2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CFF09886170AE8F800738EF2 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFF09887170AE8F800738EF2 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFF09889170AE8F800738EF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CFF0988A170AE8F800738EF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFF0988C170AE8F800738EF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iRemember/iRemember-Prefix.pch";
+				INFOPLIST_FILE = "iRemember/iRemember-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CFF0988D170AE8F800738EF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iRemember/iRemember-Prefix.pch";
+				INFOPLIST_FILE = "iRemember/iRemember-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFF09863170AE8F700738EF2 /* Build configuration list for PBXProject "iRemember" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFF09889170AE8F800738EF2 /* Debug */,
+				CFF0988A170AE8F800738EF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFF0988B170AE8F800738EF2 /* Build configuration list for PBXNativeTarget "iRemember" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFF0988C170AE8F800738EF2 /* Debug */,
+				CFF0988D170AE8F800738EF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFF09860170AE8F700738EF2 /* Project object */;
+}
