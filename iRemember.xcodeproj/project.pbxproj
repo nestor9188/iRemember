@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		CF91AC38170B26E40022B25C /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF91AC37170B26E40022B25C /* nav_menu_icon@2x.png */; };
-		CFD102CA170B220C009EAC47 /* DDMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD102C9170B220C009EAC47 /* DDMenuController.m */; };
+		CFCAC8CA171F9B13001E6ABA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCAC8C9171F9B13001E6ABA /* CoreLocation.framework */; };
 		CFD102CC170B22C1009EAC47 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD102CB170B22C1009EAC47 /* QuartzCore.framework */; };
-		CFDEEE20170B352900A1C9A8 /* FeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDEEE1B170B352900A1C9A8 /* FeedController.m */; };
-		CFDEEE21170B352900A1C9A8 /* LeftController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDEEE1D170B352900A1C9A8 /* LeftController.m */; };
 		CFDEEE22170B352900A1C9A8 /* RightController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDEEE1F170B352900A1C9A8 /* RightController.m */; };
+		CFF06A481752645200565BA6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFF069A61752645200565BA6 /* InfoPlist.strings */; };
+		CFF06A4A1752645200565BA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF069AA1752645200565BA6 /* main.m */; };
+		CFF06A4C1752645200565BA6 /* NoteDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF069AF1752645200565BA6 /* NoteDatabase.m */; };
+		CFF06A4D1752645200565BA6 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFF069B31752645200565BA6 /* 1.jpg */; };
+		CFF06A4E1752645200565BA6 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CFF069B41752645200565BA6 /* 10.jpg */; };
 		CFF0986C170AE8F800738EF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF0986B170AE8F800738EF2 /* UIKit.framework */; };
 		CFF0986E170AE8F800738EF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF0986D170AE8F800738EF2 /* Foundation.framework */; };
 		CFF09870170AE8F800738EF2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF0986F170AE8F800738EF2 /* CoreGraphics.framework */; };

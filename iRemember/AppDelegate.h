@@ -10,7 +10,7 @@
 
 @class DDMenuController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, PAPasscodeViewControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
