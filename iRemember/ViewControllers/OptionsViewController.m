@@ -16,6 +16,10 @@
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) UISwitch *passcodeSwitch;
+@property (strong, nonatomic) MBProgressHUD *progressView;
+
+- (void)syncToCloud;
+- (void)recoveryFromCloud;
 
 @end
 
@@ -210,6 +214,50 @@
     [app.menuController presentModalViewController:passcodeViewController animated:YES];
 }
 
+#pragma mark - Cloud sync
+
+- (void)syncToCloud {
+    // 开始同步时显示一个进度条
+    self.progressView = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.progressView show:YES];
+    
+    NSString *sqlQueue = [[NSUserDefaults standardUserDefaults] objectForKey:kSQLQueue];
+    NSLog(@"数据库队列：%@", sqlQueue);
+    if (sqlQueue.length > 0) {
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       @"cloud_sync", @"command",
+                                       sqlQueue, @"sql_queue",
+                                       nil];
+        [[API sharedInstance] commandWithParams:params
+                                   onCompletion:^(NSDictionary *json) {
+                                       // 同步结束后隐藏进度条
+                                       [self.progressView hide:YES];                                       
+                                       NSLog(@"%@", json);
+                                       if ([json objectForKey:@"error"] == nil) {                                           
+                                           NSLog(@"同步成功");
+                                           // 充值SQL队列
+                                           [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:kSQLQueue];
+                                           [[[UIAlertView alloc] initWithTitle:@"本地日志已同步到云端"
+                                                                       message:@""
+                                                                      delegate:self
+                                                             cancelButtonTitle:@"好的"
+                                                             otherButtonTitles:nil, nil] show];
+                                       } else {
+                                           [[[UIAlertView alloc] initWithTitle:@"同步出了点问题"
+                                                                      message:@"你的网络有点不给力哦~ 请等等再试"
+                                                                     delegate:self
+                                                            cancelButtonTitle:@"好的"
+                                                            otherButtonTitles:nil, nil] show];
+                                       }
+                                   }];
+    }
+
+}
+
+- (void)recoveryFromCloud {
+    
+}
+
 #pragma mark - UIActionSheetDelegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -226,13 +274,14 @@
             [actionSheet showInView:self.view];
             
         }
-        if (buttonIndex == 2) {
+        if (buttonIndex == 0) {
             // 增量同步本地变化的备忘到云端
+            [self syncToCloud];
         }
     }
     
     if (actionSheet.tag == 2) {
-        if (buttonIndex == 1) {
+        if (buttonIndex == 0) {
             // 确认恢复
         }
     }

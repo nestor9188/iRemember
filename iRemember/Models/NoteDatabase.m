@@ -108,7 +108,16 @@
     char *err;
     if (sqlite3_exec(_notesDB, [sql UTF8String], NULL, NULL, &err) == SQLITE_OK) {
         sqlite3_close(_notesDB);
-        NSLog(@"数据库操作成功");
+        NSLog(@"数据库操作成功，执行语句为: %@", sql);
+        
+        // 数据库操作成功后，将此条记录插入SQL队列
+        NSString *sqlQueue = [[NSUserDefaults standardUserDefaults] objectForKey:kSQLQueue];
+        if (sqlQueue.length > 0) {
+            sqlQueue = [NSString stringWithFormat:@"%@<->%@", sqlQueue, sql];
+        } else {
+            sqlQueue = sql;
+        }
+        [[NSUserDefaults standardUserDefaults] setObject:sqlQueue forKey:kSQLQueue];
         return YES;
     } else {
         NSLog(@"数据库操作失败～～～");

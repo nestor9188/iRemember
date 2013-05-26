@@ -17,5 +17,6 @@ typedef NSInteger NoteState;
 
 #define kNoteFontSize           @"NoteFontSize"
 #define kNoteFontColor          @"NoteFontColor"
-#define kIsEnablePasscode       @"IsEnablePasscode"
 #define kPasscode               @"Passcode"
+
+#define kSQLQueue               @"SQL_QUEUE"
