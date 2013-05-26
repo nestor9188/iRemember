@@ -474,10 +474,14 @@
 		CFF0988D170AE8F800738EF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: HUAXIANG TANG (394WX3M9MN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: HUAXIANG TANG (394WX3M9MN)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iRemember/iRemember-Prefix.pch";
 				INFOPLIST_FILE = "iRemember/iRemember-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C3EEE01E-0E27-4920-8869-9B220F40E4E8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C3EEE01E-0E27-4920-8869-9B220F40E4E8";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
