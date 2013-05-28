@@ -361,12 +361,6 @@
                                                                  radius:note.fireDistance   // 半径为设置的距离
                                                              identifier:[NSString stringWithFormat:@"%d", self.note.noteID]];
     
-
-//    [[[HTLocationManager alloc] init] startMonitoringForRegion:geofence
-//                                                   onExitBlock:^(NSString *identifier) {
-//                                                       [self beginLocationNotificationWithNote:note];
-//                                                   }];
-    
     [[HTLocationManager sharedInstance] startMonitoringForRegion:geofence
                                                      onExitBlock:^(NSString *identifier) {
                                                          NSLog(@"identifier is: %@", identifier);

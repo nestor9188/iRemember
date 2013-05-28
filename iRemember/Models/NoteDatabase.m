@@ -13,6 +13,8 @@
 
 @property (nonatomic) sqlite3 *notesDB;
 @property (strong, nonatomic) NSString *databasePath;
+@property (copy) RecoveryCompletionBlock completionBlock;
+
 
 - (BOOL)execSQL:(NSString *)sql;
 
@@ -102,6 +104,50 @@
         return YES;
     }
     return NO;
+}
+
+- (void)recoveryFromCloudWithCompletionBlock:(RecoveryCompletionBlock)block {
+    self.completionBlock = block;
+
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   @"cloud_recovery", @"command",
+                                   nil];
+    [[API sharedInstance] commandWithParams:params
+                               onCompletion:^(NSDictionary *json) {
+                                   NSLog(@"recovery: %@", json);
+                                   BOOL success = YES;
+                                   if ([json objectForKey:@"error"] == nil && [[json objectForKey:@"result"] count] > 0) {
+                                       NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+                                       NSString *docPath = [paths objectAtIndex:0];
+                                       _databasePath = [docPath stringByAppendingPathComponent:@"iRemember.sqlite"];
+                                       NSFileManager *fileManager = [NSFileManager defaultManager];
+                                       [fileManager removeItemAtPath:_databasePath error:nil];
+                                       [[NoteDatabase sharedInstance] notes];
+                                       
+                                       NSArray *tempNotes = [json objectForKey:@"result"];
+                                       for (NSDictionary *note in tempNotes) {
+                                           int noteID = [[note objectForKey:@"id"] intValue];
+                                           NSString *content = [note objectForKey:@"content"];
+                                           int state = [[note objectForKey:@"state"] intValue];
+                                           NSString *modifiedDate = [note objectForKey:@"modified_date"];
+                                           NSString *fireDate = [note objectForKey:@"fire_date"];
+                                           int fireDistance = [[note objectForKey:@"fire_distance"] intValue];
+                                           Note *aNote = [[Note alloc] initWithNoteID:noteID
+                                                                              content:content
+                                                                         modifiedDate:modifiedDate
+                                                                                state:state
+                                                                             fireDate:fireDate
+                                                                         fireDistance:fireDistance];
+                                           if (![self insertNote:aNote]) {
+                                               success = NO;
+                                           };
+                                       }
+                                       [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:kSQLQueue];
+                                   } else {
+                                       success = NO;
+                                   }
+                                    block(success);
+                               }];
 }
 
 - (BOOL)execSQL:(NSString *)sql {

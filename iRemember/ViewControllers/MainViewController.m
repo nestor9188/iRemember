@@ -234,6 +234,12 @@
 
 #pragma mark - Actions
 
+- (void)reloadNotes {
+    self.notes = [[NSMutableArray alloc] initWithArray:[[NoteDatabase sharedInstance] notes]];
+    self.filteredNoteArray = [[NSMutableArray alloc] initWithCapacity:self.notes.count];
+    [self.tableView reloadData];
+}
+
 - (IBAction)showRightView:(id)sender {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.menuController showRightController:YES];

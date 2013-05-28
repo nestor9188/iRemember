@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Note.h"
 
+typedef void (^RecoveryCompletionBlock)(BOOL success);
+
 @interface NoteDatabase : NSObject
 
 + (NoteDatabase *)sharedInstance;
@@ -16,6 +18,7 @@
 - (BOOL)insertNote:(Note *)note;
 - (BOOL)updateNote:(Note *)note;
 - (BOOL)deleteNote:(Note *)note;
+- (void)recoveryFromCloudWithCompletionBlock:(RecoveryCompletionBlock)block;
 
 - (NSMutableArray *)notes;
 

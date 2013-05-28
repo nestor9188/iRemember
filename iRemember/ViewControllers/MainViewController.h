@@ -18,5 +18,6 @@
 - (void)checkUnreadNote;
 - (void)resetRemindFinishedNote;
 - (void)beginSearch;
+- (void)reloadNotes;
 
 @end

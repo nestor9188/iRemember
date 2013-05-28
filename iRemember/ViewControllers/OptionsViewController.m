@@ -11,6 +11,8 @@
 #import "DDMenuController.h"
 #import "TextSettingViewController.h"
 #import "AppDelegate.h"
+#import "NoteDatabase.h"
+#import "MainViewController.h"
 
 @interface OptionsViewController ()
 
@@ -250,12 +252,27 @@
                                                             otherButtonTitles:nil, nil] show];
                                        }
                                    }];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"本地日志已同步到云端"
+                                    message:@""
+                                   delegate:self
+                          cancelButtonTitle:@"好的"
+                          otherButtonTitles:nil, nil] show];
     }
 
 }
 
 - (void)recoveryFromCloud {
-    
+    [[NoteDatabase sharedInstance] recoveryFromCloudWithCompletionBlock:^(BOOL success) {
+        if (success) {
+            [[[UIAlertView alloc] initWithTitle:@"备忘已从云端恢复~"
+                                        message:@""
+                                       delegate:self
+                              cancelButtonTitle:@"好的"
+                              otherButtonTitles:nil, nil] show];
+            [self.mainViewController reloadNotes];
+        }
+    }];
 }
 
 #pragma mark - UIActionSheetDelegate
@@ -283,6 +300,7 @@
     if (actionSheet.tag == 2) {
         if (buttonIndex == 0) {
             // 确认恢复
+            [self recoveryFromCloud];
         }
     }
 }
