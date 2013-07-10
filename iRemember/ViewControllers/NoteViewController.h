@@ -19,4 +19,6 @@
 - (IBAction)done:(id)sender;
 - (IBAction)share:(id)sender;
 
+- (void)resetBackground;
+
 @end

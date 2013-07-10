@@ -45,6 +45,9 @@
         // 如果没有设置字体颜色，默认为黑色 0xFF000000
         [[NSUserDefaults standardUserDefaults] setObject:@"0xFF000000" forKey:kNoteFontColor];
     }
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:kBackground]) {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:1] forKey:kBackground];
+    }
     
     // 检查是否设置密码
     if ([Utilities isEnablePasscode]) {

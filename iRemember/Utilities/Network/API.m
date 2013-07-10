@@ -9,9 +9,6 @@
 #import "API.h"
 
 //the web location of the service
-#define kAPIHost @"http://127.0.0.1"
-#define kAPIPath @"iremember/"
-#define kHostURL            @"http://127.0.0.1/iremember/"
 
 @implementation API
 

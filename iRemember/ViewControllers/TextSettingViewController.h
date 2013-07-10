@@ -11,4 +11,5 @@
 #import "ColorViewController.h"
 
 @interface TextSettingViewController : UITableViewController<WEPopoverControllerDelegate, UIPopoverControllerDelegate, ColorViewControllerDelegate> 
+
 @end

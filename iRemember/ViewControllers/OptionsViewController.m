@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 #import "NoteDatabase.h"
 #import "MainViewController.h"
+#import "BackgroundSettingViewController.h"
 
 @interface OptionsViewController ()
 
@@ -58,6 +59,8 @@
         [self.view addSubview:tableView];
         self.tableView = tableView;
     }
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_1.jpg"]];
+    self.tableView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewDidUnload {
@@ -178,6 +181,10 @@
     
     if (indexPath.section == 1) {
         // 设置背景
+        BackgroundSettingViewController *bgvc = [[BackgroundSettingViewController alloc] initWithNibName:nil bundle:nil];
+        bgvc.mainViewController = self.mainViewController;
+        DDMenuController *menuController = (DDMenuController*)((AppDelegate *)[[UIApplication sharedApplication] delegate]).menuController;
+        [menuController pushViewController:bgvc animated:YES];
     }
     
     if (indexPath.section == 2) {

@@ -25,9 +25,32 @@
         self.backImageView = [[[UIImageView alloc] init] autorelease];
         self.backImageView.contentMode = UIViewContentModeScaleAspectFit;
         self.backImageView.clipsToBounds = YES;
-        [self.backImageView setImage:[UIImage imageNamed:@"note_pink_170.jpg"]];
+        self.backImageView.backgroundColor = [UIColor colorWithRed:51 / 255.0f green:114 / 255.0f blue:242 / 255.0f alpha:0.4];
+//        [self.backImageView setImage:[UIImage imageNamed:@"note_pink_170.jpg"]];
         [self.backImageView setUserInteractionEnabled:NO];
         
+        self.contentLabel = [[[UILabel alloc] init] autorelease];
+        self.contentLabel.backgroundColor = [UIColor clearColor];
+        [self.contentLabel setNumberOfLines:5];
+        [self.contentLabel setFont:[UIFont systemFontOfSize:13]];
+        [self.contentLabel setTextAlignment:NSTextAlignmentCenter];
+        [self.contentLabel setUserInteractionEnabled:NO];
+        self.contentLabel.textColor = [UIColor colorWithRed:28 / 255.0f green:40 / 255.0f blue:62 / 255.0f alpha:1.0];
+
+        [self addTarget:self.delegate
+                 action:@selector(didSelectedCell:)
+       forControlEvents:UIControlEventTouchUpInside];
+    }
+    return self;
+}
+
+- (id)initWithIdentifier:(NSString *)identifier background:(NSString *)background {
+    self = [super init];
+    if (self) {
+        self.reuseIdentifier = identifier;
+        self.clipsToBounds = YES;
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:background]];
+
         self.contentLabel = [[[UILabel alloc] init] autorelease];
         self.contentLabel.backgroundColor = [UIColor clearColor];
         [self.contentLabel setNumberOfLines:5];

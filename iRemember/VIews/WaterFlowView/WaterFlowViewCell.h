@@ -23,6 +23,7 @@
 @property (nonatomic, assign) id delegate;
 
 - (id)initWithIdentifier:(NSString *)identifier;
+- (id)initWithIdentifier:(NSString *)identifier background:(NSString *)background;
 
 @end
 

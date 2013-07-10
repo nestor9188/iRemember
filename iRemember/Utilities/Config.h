@@ -15,8 +15,15 @@ enum NoteState {
 };
 typedef NSInteger NoteState;
 
+#if TARGET_IPHONE_SIMULATOR
+#define kHostURL            @"http://127.0.0.1/iremember/"
+#elif TARGET_OS_IPHONE
+#define kHostURL            @"http://222.76.147.133/iremember/"
+#endif
+
 #define kNoteFontSize           @"NoteFontSize"
 #define kNoteFontColor          @"NoteFontColor"
+#define kBackground             @"Background"
 #define kPasscode               @"Passcode"
 
 #define kSQLQueue               @"SQL_QUEUE"

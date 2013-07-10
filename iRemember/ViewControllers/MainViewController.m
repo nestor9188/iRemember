@@ -19,6 +19,7 @@
 
 @interface MainViewController ()
 
+@property (strong, nonatomic) IBOutlet UIButton *switchButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) WaterFlowView *scrollView;
 @property (strong, nonatomic) NoteViewController *noteViewController;
@@ -26,6 +27,7 @@
 @property (strong, nonatomic) NSMutableArray *notes;
 @property (strong, nonatomic) UISearchDisplayController *mySearchDisplayController;
 @property (strong, nonatomic) NSMutableArray *filteredNoteArray;
+@property (strong ,nonatomic) UIImageView *backImageView;
 
 @end
 
@@ -45,11 +47,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.navigationController setNavigationBarHidden:YES];
-    
-    UIImageView *backView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"8.jpg"]];
-    [self.view addSubview:backView];
-    [self.view sendSubviewToBack:backView];
-    
     WaterFlowView *scrollView = [[WaterFlowView alloc] initWithFrame:self.tableView.frame];
     [scrollView setAlwaysBounceVertical:YES];
     [scrollView setWaterFlowDataSource:self];
@@ -66,6 +63,7 @@
     searchDisplayController.searchResultsDelegate = self;
     searchDisplayController.delegate = self;
     self.mySearchDisplayController = searchDisplayController;
+    [self resetBackground];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -234,6 +232,22 @@
 
 #pragma mark - Actions
 
+- (void)resetBackground {
+//    [self.noteViewController resetBackground];
+    
+    int imageCount = [[[NSUserDefaults standardUserDefaults] objectForKey:kBackground] intValue];
+    if (imageCount < 16) {
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"bg_%d.jpg", imageCount]]];
+    } else {
+        self.view.backgroundColor = [UIColor clearColor];
+        self.backImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"bg_%d.jpg", imageCount]]];
+        if (!self.backImageView.superview) {
+            [self.view addSubview:self.backImageView];
+            [self.view sendSubviewToBack:self.backImageView];
+        }
+    }
+}
+
 - (void)reloadNotes {
     self.notes = [[NSMutableArray alloc] initWithArray:[[NoteDatabase sharedInstance] notes]];
     self.filteredNoteArray = [[NSMutableArray alloc] initWithCapacity:self.notes.count];
@@ -254,6 +268,8 @@
 - (IBAction)toggleDisplayMode:(id)sender {
     if (self.tableView.superview) {
         // 显示格子视图
+        [self.switchButton setImage:[UIImage imageNamed:@"list_mode_40"] forState:UIControlStateNormal];
+        
         [self.scrollView reloadData];
         [self.tableView removeFromSuperview];
         CATransition *animation = [CATransition animation];
@@ -266,6 +282,8 @@
         [self.view.layer addAnimation:animation forKey:@"animation"];
     } else {
         // 显示列表视图
+        [self.switchButton setImage:[UIImage imageNamed:@"note_mode_40"] forState:UIControlStateNormal];
+        
         [self.scrollView removeFromSuperview];
         CATransition *animation = [CATransition animation];
         animation.delegate = self;

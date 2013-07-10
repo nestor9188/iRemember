@@ -21,6 +21,7 @@
 @property (readwrite, nonatomic) BOOL isNewNote;
 @property (readwrite, nonatomic) BOOL isNoteEdited;
 @property (readwrite, nonatomic) BOOL isShowReminderView;
+@property (strong, nonatomic) UIImageView *backImageView;
 
 - (void)saveNote;
 
@@ -80,9 +81,11 @@
     
     self.notePad.textView.delegate = self;
     
-    UIImageView *backView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background1_320_480.jpg"]];
-    [self.view addSubview:backView];
-    [self.view sendSubviewToBack:backView];
+//    [self resetBackground];
+    
+//    UIImageView *backView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background1_320_480.jpg"]];
+//    [self.view addSubview:backView];
+//    [self.view sendSubviewToBack:backView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -141,6 +144,20 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIKeyboardWillChangeFrameNotification
                                                   object:nil];
+}
+
+- (void)resetBackground {
+//    int imageCount = [[[NSUserDefaults standardUserDefaults] objectForKey:kBackground] intValue];
+//    if (imageCount < 16) {
+//        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:[NSString stringWithFormat:@"bg_%d.jpg", imageCount]]];
+//    } else {
+//        self.view.backgroundColor = [UIColor clearColor];
+//        self.backImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"bg_%d.jpg", imageCount]]];
+//        if (!self.backImageView.subviews) {
+//            [self.view addSubview:self.backImageView];
+//            [self.view sendSubviewToBack:self.backImageView];
+//        }
+//    }
 }
 
 #pragma mark - UITextViewDelegate
@@ -330,7 +347,7 @@
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     localNotification.fireDate = [Utilities dateFromString:note.fireDate];
     localNotification.repeatInterval = 0;
-    localNotification.alertBody = [NSString stringWithFormat:@"这是时间通知%@", note.content];
+    localNotification.alertBody = [NSString stringWithFormat:@"%@", note.content];
     localNotification.alertAction = @"进入";
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     localNotification.applicationIconBadgeNumber = 1;
@@ -384,7 +401,7 @@
     // 一秒后发出通知, 如果有连续多个通知，之后的通知全部延迟5秒发出
     localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval:inteval];   
     localNotification.repeatInterval = 0;
-    localNotification.alertBody = [NSString stringWithFormat:@"这是位置通知%@", note.content];
+    localNotification.alertBody = [NSString stringWithFormat:@"%@", note.content];
     localNotification.alertAction = @"进入";
     localNotification.soundName = UILocalNotificationDefaultSoundName;
     localNotification.applicationIconBadgeNumber = 1;

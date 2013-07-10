@@ -15,6 +15,8 @@
 - (IBAction)addNote:(id)sender;
 - (IBAction)toggleDisplayMode:(id)sender;
 
+- (void)resetBackground;
+
 - (void)checkUnreadNote;
 - (void)resetRemindFinishedNote;
 - (void)beginSearch;
